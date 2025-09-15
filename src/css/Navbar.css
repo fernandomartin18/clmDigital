@@ -1,0 +1,79 @@
+.custom-navbar {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+  z-index: 100;
+  display: block;
+  padding: 0.5rem 2rem;
+  box-shadow: var(--navbar-shadow, 0 2px 16px rgba(0, 0, 0, 0.307));
+  border-radius: 1.5rem;
+  margin: 1rem auto 0 auto;
+  width: fit-content;
+  max-width: none;
+  background: var(--navbar-bg, #fffccc);
+  color: var(--navbar-text, #222);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(142, 141, 141, 0.35);
+}
+
+.custom-navbar ul {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.custom-navbar li {
+  cursor: pointer;
+  font-weight: 500;
+  transition: color 0.2s;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+
+}
+
+.custom-navbar li.active {
+  color: var(--primary);
+}
+
+.theme-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 0.1rem;
+}
+
+@media (max-width: 500px) {
+  .custom-navbar {
+    box-sizing: border-box;
+    width: calc(100vw - 1rem);
+    max-width: calc(100vw - 1rem);
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    left: 0;
+    right: 0;
+    transform: none;
+    border-radius: 1.5rem;
+  }
+  .custom-navbar ul {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0.8rem;
+  }
+  .custom-navbar li {
+    font-size: 0.9rem;
+  }
+  .theme-btn img {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+}

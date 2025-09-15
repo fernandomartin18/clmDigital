@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import '../css/Navbar.css'
 
 function Navbar({ theme, toggleTheme, scrollToSection, themes, activeSection }) {
@@ -6,38 +6,76 @@ function Navbar({ theme, toggleTheme, scrollToSection, themes, activeSection }) 
   const iconSrc = theme === 'light' ? './dark.png' : './light.png'
   const iconColor = themes[theme].navbarText
 
+  // Ref para el ul y para cada li
+  const ulRef = useRef(null)
+  const liRefs = {
+    inicio: useRef(null),
+    programa: useRef(null),
+    ponentes: useRef(null),
+    inscripcion: useRef(null),
+    ediciones: useRef(null),
+    patrocinadores: useRef(null),
+  }
+
+  // Scroll horizontal al elemento activo en móvil
+  useEffect(() => {
+    if (!isMobile) return
+    const activeLi = liRefs[activeSection]?.current
+    const ul = ulRef.current
+    if (activeLi && ul) {
+      const liRect = activeLi.getBoundingClientRect()
+      const ulRect = ul.getBoundingClientRect()
+      // Solo scroll si el li está fuera de la vista
+      if (liRect.left < ulRect.left || liRect.right > ulRect.right) {
+        activeLi.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' })
+      }
+    }
+  }, [activeSection, isMobile])
+
   return (
     <nav className="navbar custom-navbar">
-      <ul>
+      <ul ref={ulRef}>
         <li
+          ref={liRefs.inicio}
           className={activeSection === 'inicio' ? 'active' : ''}
           onClick={() => scrollToSection('inicio')}
         >
           Inicio
         </li>
         <li
-          className={activeSection === 'proyectos' ? 'active' : ''}
-          onClick={() => scrollToSection('proyectos')}
+          ref={liRefs.programa}
+          className={activeSection === 'programa' ? 'active' : ''}
+          onClick={() => scrollToSection('programa')}
         >
-          Proyectos
+          Programa
         </li>
         <li
-          className={activeSection === 'experiencia' ? 'active' : ''}
-          onClick={() => scrollToSection('experiencia')}
+          ref={liRefs.ponentes}
+          className={activeSection === 'ponentes' ? 'active' : ''}
+          onClick={() => scrollToSection('ponentes')}
         >
-          {isMobile ? 'Exp.' : 'Experiencia'}
+          Ponentes
         </li>
         <li
-          className={activeSection === 'sobreMi' ? 'active' : ''}
-          onClick={() => scrollToSection('sobreMi')}
+          ref={liRefs.inscripcion}
+          className={activeSection === 'inscripcion' ? 'active' : ''}
+          onClick={() => scrollToSection('inscripcion')}
         >
-          Sobre Mí
+          Inscripción
         </li>
         <li
-          className={activeSection === 'contacto' ? 'active' : ''}
-          onClick={() => scrollToSection('contacto')}
+          ref={liRefs.ediciones}
+          className={activeSection === 'ediciones' ? 'active' : ''}
+          onClick={() => scrollToSection('ediciones')}
         >
-          Contacto
+          Ediciones anteriores
+        </li>
+        <li
+          ref={liRefs.patrocinadores}
+          className={activeSection === 'patrocinadores' ? 'active' : ''}
+          onClick={() => scrollToSection('patrocinadores')}
+        >
+          Patrocinadores
         </li>
         <li>
           <button className="theme-btn" onClick={toggleTheme}>

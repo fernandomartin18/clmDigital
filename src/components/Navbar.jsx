@@ -6,13 +6,11 @@ function Navbar({ theme, toggleTheme, scrollToSection, themes, activeSection }) 
   const iconSrc = theme === 'light' ? './dark.png' : './light.png'
   const iconColor = themes[theme].navbarText
 
-  // Ref para el ul y para cada li
   const ulRef = useRef(null)
   const liRefs = {
     inicio: useRef(null),
     programa: useRef(null),
     ponentes: useRef(null),
-    inscripcion: useRef(null),
     ediciones: useRef(null),
     patrocinadores: useRef(null),
   }
@@ -55,13 +53,6 @@ function Navbar({ theme, toggleTheme, scrollToSection, themes, activeSection }) 
           onClick={() => scrollToSection('ponentes')}
         >
           Ponentes
-        </li>
-        <li
-          ref={liRefs.inscripcion}
-          className={activeSection === 'inscripcion' ? 'active' : ''}
-          onClick={() => scrollToSection('inscripcion')}
-        >
-          Inscripción
         </li>
         <li
           ref={liRefs.ediciones}

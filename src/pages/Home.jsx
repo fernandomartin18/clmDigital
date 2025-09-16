@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect } from 'react'
 import themes from '../styles/themes'
 import Navbar from '../components/Navbar'
+import Inicio from '../components/Inicio'
 
 export default function Home({ theme, toggleTheme }) {
   const [activeSection, setActiveSection] = useState('inicio')
@@ -8,7 +9,6 @@ export default function Home({ theme, toggleTheme }) {
     inicio: useRef(null),
     programa: useRef(null),
     ponentes: useRef(null),
-    inscripcion: useRef(null),
     ediciones: useRef(null),
     patrocinadores: useRef(null),
   }
@@ -82,12 +82,10 @@ export default function Home({ theme, toggleTheme }) {
     document.body.style.transition = 'background 0.5s, color 0.5s'
     document.body.style.overscrollBehaviorY = 'contain'
     document.body.style.overflowY = 'auto'
-    document.body.style.backgroundColor = themes[theme].background // Fondo sólido para evitar blanco
-    // Elimina height: 100vh
+    document.body.style.backgroundColor = themes[theme].background
     document.documentElement.style.overscrollBehaviorY = 'contain'
     document.documentElement.style.overflowY = 'auto'
     document.documentElement.style.transition = 'background 0.5s, color 0.5s'
-    // Elimina height: 100vh
     document.documentElement.style.setProperty('--navbar-bg', themes[theme].navbar + 'cc')
     document.documentElement.style.setProperty('--navbar-text', themes[theme].navbarText)
     document.documentElement.style.setProperty('--navbar-shadow', themes[theme].navbarShadow)
@@ -105,17 +103,14 @@ export default function Home({ theme, toggleTheme }) {
         activeSection={activeSection}
       />
       <main>
-        <section ref={sections.inicio} style={{ minHeight: '100vh', padding: '4rem 0' }}>
-          <h1>Inicio</h1>
+        <section ref={sections.inicio} style={{ minHeight: '100vh', padding: 0 }}>
+          <Inicio />
         </section>
         <section ref={sections.programa} style={{ minHeight: '100vh', padding: '4rem 0' }}>
           <h1>Programa</h1>
         </section>
         <section ref={sections.ponentes} style={{ minHeight: '100vh', padding: '4rem 0' }}>
           <h1>Ponentes</h1>
-        </section>
-        <section ref={sections.inscripcion} style={{ minHeight: '100vh', padding: '4rem 0' }}>
-          <h1>Inscripción</h1>
         </section>
         <section ref={sections.ediciones} style={{ minHeight: '100vh', padding: '4rem 0' }}>
           <h1>Ediciones anteriores</h1>

@@ -116,7 +116,7 @@
   font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
   font-size: 1.2rem;
   background: rgba(20, 20, 30, 0.55);
-  padding: 0.6rem 1.2rem;
+  padding: 0.7rem 1.2rem;
   border-radius: 1.5rem;
   display: inline-block;
   letter-spacing: 0.02em;
@@ -141,6 +141,123 @@
     0 0 2px #222;
   text-transform: uppercase;
   color: #fff;
+}
+
+.inicio-info-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 950px;
+  margin: 0 auto 3.5rem auto;
+  padding: 3.5rem 2rem 0 2rem;
+  position: relative;
+  gap: 0;
+}
+
+.inicio-info-top {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.inicio-info-main {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2.5rem;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.inicio-info-img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  flex-shrink: 0;
+  margin-right: 8rem;
+}
+
+.inicio-info-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 1rem;
+}
+
+.inicio-info-content p {
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  font-size: 1.18rem;
+  color: #f6f8fa;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+[data-theme="dark"] .inicio-info-content p {
+  color: #f6f8fa;
+}
+
+.inicio-inscribete-btn {
+  display: block;
+  background: #e79608;
+  color: #fff;
+  border: 3px solid transparent;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  width: fit-content;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 0.6rem 5rem;
+  margin-bottom: 3rem;
+  border-radius: 32px;
+  text-decoration: none;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  letter-spacing: 0.03em;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.inicio-inscribete-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: 2.5rem;
+  padding: 3px;
+  background: linear-gradient(120deg, #ffe29f, #ffb347, #e79608, #ffb347, #ffe29f, #e79608, #ffe29f);
+  background-size: 400% 400%;
+  animation: glow-border-move 12s linear infinite;
+  pointer-events: none;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+@keyframes glow-border-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.inicio-inscribete-btn:hover,
+.inicio-inscribete-btn:focus {
+  background: #c97d00;
+  color: #fff;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.13);
 }
 
 @media (max-width: 750px) {
@@ -259,5 +376,55 @@
   :root[data-theme="light"] .inicio-hero-overlay {
     background: none;
     backdrop-filter: blur(1px);
+  }
+}
+
+@media (max-width: 900px) {
+  .inicio-info-main {
+    gap: 1.2rem;
+  }
+  .inicio-info-img {
+    width: 100px;
+    height: 100px;
+    margin-right: 0;
+  }
+  .inicio-info-content p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .inicio-info-section {
+    padding: 1.5rem 0.5rem 0 0.5rem;
+    margin-bottom: 2.5rem;
+  }
+  .inicio-info-main {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.1rem;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+  .inicio-info-img {
+    margin: 0 auto;
+    width: 70px;
+    height: 70px;
+  }
+  .inicio-info-content {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+  .inicio-info-content p {
+    font-size: 0.97rem;
+    margin-bottom: 1.1rem;
+  }
+  .inicio-inscribete-btn {
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    padding: 0.7rem 0;
+    margin-bottom: 1.5rem;
   }
 }

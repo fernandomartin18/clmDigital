@@ -2,6 +2,7 @@ import { useRef, useState, useEffect } from 'react'
 import themes from '../styles/themes'
 import Navbar from '../components/Navbar'
 import Inicio from '../components/Inicio'
+import Programa from '../components/Programa'
 
 export default function Home({ theme, toggleTheme }) {
   const [activeSection, setActiveSection] = useState('inicio')
@@ -107,7 +108,7 @@ export default function Home({ theme, toggleTheme }) {
           <Inicio />
         </section>
         <section ref={sections.programa} style={{ minHeight: '100vh', padding: '4rem 0' }}>
-          <h1>Programa</h1>
+          <Programa />
         </section>
         <section ref={sections.ponentes} style={{ minHeight: '100vh', padding: '4rem 0' }}>
           <h1>Ponentes</h1>

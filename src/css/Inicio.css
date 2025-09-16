@@ -35,6 +35,14 @@
     rgba(0,0,0,0.10) 97%,
     transparent 100%
   );
+  /* Añade la propiedad estándar para compatibilidad */
+  mask: linear-gradient(
+    to bottom,
+    black 0%,
+    black 85%,
+    rgba(0,0,0,0.10) 97%,
+    transparent 100%
+  );
 }
 
 .inicio-hero-overlay {
@@ -363,6 +371,14 @@
       rgba(0,0,0,0.10) 97%,
       transparent 100%
     );
+    /* Añade la propiedad estándar para compatibilidad */
+    mask: linear-gradient(
+      to bottom,
+      black 0%,
+      black 85%,
+      rgba(0,0,0,0.10) 97%,
+      transparent 100%
+    );
   }
   .inicio-hero-overlay {
     padding: 0 0.5rem;
@@ -417,6 +433,14 @@
       transparent 100%
     );
     mask-image: linear-gradient(
+      to bottom,
+      black 0%,
+      black 85%,
+      rgba(0,0,0,0.10) 97%,
+      transparent 100%
+    );
+    /* Añade la propiedad estándar para compatibilidad */
+    mask: linear-gradient(
       to bottom,
       black 0%,
       black 85%,

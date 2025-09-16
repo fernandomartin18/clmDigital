@@ -3,6 +3,7 @@ import themes from '../styles/themes'
 import Navbar from '../components/Navbar'
 import Inicio from '../components/Inicio'
 import Programa from '../components/Programa'
+import Ponentes from '../components/Ponentes'
 
 export default function Home({ theme, toggleTheme }) {
   const [activeSection, setActiveSection] = useState('inicio')
@@ -110,13 +111,13 @@ export default function Home({ theme, toggleTheme }) {
         <section ref={sections.programa} style={{ padding: 0 }}>
           <Programa />
         </section>
-        <section ref={sections.ponentes} style={{ minHeight: '100vh', padding: '4rem 0' }}>
-          <h1>Ponentes</h1>
+        <section ref={sections.ponentes} style={{ padding: 0 }}>
+          <Ponentes />
         </section>
-        <section ref={sections.ediciones} style={{ minHeight: '100vh', padding: '4rem 0' }}>
+        <section ref={sections.ediciones} style={{ padding: 0 }}>
           <h1>Ediciones anteriores</h1>
         </section>
-        <section ref={sections.patrocinadores} style={{ minHeight: '100vh', padding: '4rem 0' }}>
+        <section ref={sections.patrocinadores} style={{ padding: 0 }}>
           <h1>Patrocinadores</h1>
         </section>
       </main>

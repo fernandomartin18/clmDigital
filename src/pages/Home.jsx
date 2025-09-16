@@ -104,10 +104,10 @@ export default function Home({ theme, toggleTheme }) {
         activeSection={activeSection}
       />
       <main>
-        <section ref={sections.inicio} style={{ minHeight: '100vh', padding: 0 }}>
+        <section ref={sections.inicio} style={{ padding: 0 }}>
           <Inicio />
         </section>
-        <section ref={sections.programa} style={{ minHeight: '100vh', padding: '4rem 0' }}>
+        <section ref={sections.programa} style={{ padding: 0 }}>
           <Programa />
         </section>
         <section ref={sections.ponentes} style={{ minHeight: '100vh', padding: '4rem 0' }}>

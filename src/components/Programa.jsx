@@ -41,19 +41,26 @@ const actividades = [
   },
   {
     hora: ' 11:00 - 12:00',
-    titulo: 'Charla 2 – Juan de Dios Llamas',
+    titulo: 'Charla 2 – Juan de Dios Llamas - AI: Una historia de Valor, Gritos y Silencios.',
     descripcion: (
       <>
-        Chief Data Oficer en BBDO & Proximity, profesor en escuelas de negocio y auténtico evangelista del poder del dato, Juan de Dios Llamas lleva más de una década ayudando a empresas y equipos a entender que la información no sirve de nada si no se convierte en conocimiento. Su charla en <span className="marca-clm">CLM-Digital: IA, naturalmente artificial</span> explorará cómo los datos, bien gestionados, son la gasolina de la inteligencia artificial: desde la publicidad hasta la estrategia empresarial, pasando por la forma en que cada clic y cada búsqueda dibujan nuestro presente digital. Una sesión pensada para descubrir cómo la IA transforma industrias, marcas y personas, y por qué el futuro será de quienes sepan leer entre los números.
+        En esta ponencia hablaremos de cómo la IA no puede sostenerse en la moda ni en la especulación: su legitimidad sólo nace cuando genera valor real, medible y humano, no cuando se presenta como un truco de feria. Señalaremos también el escenario actual donde las grandes corporaciones levantan gritos y promesas altisonantes movidas por intereses que muchas veces no son los del usuario ni la sociedad, ruido que confunde más de lo que aclara.
+        <br />
+        <br />
+        Y, frente a ese estruendo, la revolución silenciosa: la IA que ya se está integrando sin titulares, transformando procesos en turismo, seguros, educación, salud, marketing, defensa; la que optimiza infraestructuras, tiempos o abre oportunidades creativas que antes no existían. Esa es la IA que arraiga, que cambia la vida con hechos aunque con poca pedagogía.
+        <br />
+        <br />
+        La ponencia “AI: Una historia de Valor, Gritos y Silencios” es una invitación a leer el presente con ojos críticos y a reconocer dónde está la verdadera revolución: no en la espuma de las grandes promesas, sino en el impacto tangible que se queda cuando el ruido desaparece.
+
       </>
     )
   },
   {
     hora: ' 12:00 - 13:00',
-    titulo: 'Charla 3 – Pablo Morillo González',
+    titulo: 'Charla 3 – Pablo Morillo González - La Inteligencia Artificial en el dominio del espacio',
     descripcion: (
       <>
-        Director del Segmento de Vuelo en Deimos y pionero en proyectos aeroespaciales desde Puertollano, Pablo Morillo vive entre satélites, innovación y futuro. Bajo su liderazgo se han desarrollado misiones como <span className="marca-clm">Comet Interceptor</span> con la Agencia Espacial Europea, el nanosatélite <span className="marca-clm">Neptuno</span> con estructura 3D y sistemas de inteligencia artificial para vigilancia marítima, o <span className="marca-clm">DRACO</span>, un proyecto que estudia cómo reducir la basura espacial. Su charla en <span className="marca-clm">CLM-Digital: IA, naturalmente artificial</span> mostrará cómo la inteligencia artificial no solo revoluciona la Tierra, sino también el espacio. Una visión inspiradora sobre cómo los algoritmos ya nos acompañan más allá de la atmósfera y qué significa para la exploración y la vida en nuestro planeta.
+        "Hoy en día la IA es como el color negro, combina con todo". Esta frase refleja el sentir común en la sociedad, pero, ¿es realmente cierto? ¿Puede la IA aplicarse de manera efectiva para mejorar nuestras capacidades en el ámbito espacial? A lo largo de la ponencia, descubriremos como esta disruptiva tecnología ofrece enormes ventajas en el presente y nuevas perspectivas futuras a la sociedad, en los ámbitos civiles y de defensa.
       </>
     )
   },

@@ -45,7 +45,7 @@ export default function Inicio() {
         </div>
         <div className="inicio-info-main">
           <img
-            src={isDark ? '/faviconblanco.png' : '/favicon.png'}
+            src={isDark ? '/faviconblaco2.png' : '/favicon.png'}
             alt="Logo CLM Digital"
             className="inicio-info-img"
           />

@@ -184,6 +184,7 @@
   object-fit: contain;
   flex-shrink: 0;
   margin-right: 8rem;
+  margin-top: 0.2rem;
 }
 
 .inicio-info-content {
@@ -493,6 +494,7 @@
     width: 100px;
     height: 100px;
     margin-right: 0;
+    margin-top: 1rem;
   }
   .inicio-info-content p {
     font-size: 1rem;

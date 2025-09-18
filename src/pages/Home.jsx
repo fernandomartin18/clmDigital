@@ -18,7 +18,14 @@ export default function Home({ theme, toggleTheme }) {
   }
 
   const scrollToSection = (key) => {
-    sections[key].current.scrollIntoView({ behavior: 'smooth' })
+    const offset = 80 // altura aproximada de la navbar en px
+    const element = sections[key].current
+    if (element) {
+      const rect = element.getBoundingClientRect()
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+      const top = rect.top + scrollTop - offset
+      window.scrollTo({ top, behavior: 'smooth' })
+    }
   }
 
   // Visibilidad animada de cada sección
@@ -53,22 +60,18 @@ export default function Home({ theme, toggleTheme }) {
   useEffect(() => {
     const handleScroll = () => {
       const sectionKeys = Object.keys(sections)
+      const offset = 80 // mismo offset que en scrollToSection
       let current = sectionKeys[0]
+      let closest = -Infinity
       for (let key of sectionKeys) {
         const ref = sections[key].current
         if (ref) {
           const rect = ref.getBoundingClientRect()
-          if (rect.top <= 80 && rect.bottom > 80) {
+          if (rect.top <= offset && rect.top > closest) {
+            closest = rect.top
             current = key
-            break
           }
         }
-      }
-      // Cerca del final de la página, navbar activa contacto
-      const scrollPosition = window.innerHeight + window.scrollY
-      const threshold = 50 // píxeles desde el fondo
-      if (document.body.offsetHeight - scrollPosition < threshold) {
-        current = 'contacto'
       }
       setActiveSection(current)
     }

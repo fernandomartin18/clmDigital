@@ -5,6 +5,7 @@ import Inicio from '../components/Inicio'
 import Programa from '../components/Programa'
 import Ponentes from '../components/Ponentes'
 import EdicionesAnteriores from '../components/EdicionesAnteriores'
+import Patrocinadores from '../components/Patrocinadores'
 
 export default function Home({ theme, toggleTheme }) {
   const [activeSection, setActiveSection] = useState('inicio')
@@ -119,7 +120,7 @@ export default function Home({ theme, toggleTheme }) {
           <EdicionesAnteriores />
         </section>
         <section ref={sections.patrocinadores} style={{ padding: 0 }}>
-          <h1>Patrocinadores</h1>
+          <Patrocinadores />
         </section>
       </main>
     </>

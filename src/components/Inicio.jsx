@@ -36,6 +36,9 @@ export default function Inicio() {
             href="https://forms.gle/your-form-link"
             target="_blank"
             rel="noopener noreferrer"
+            aria-disabled="true"
+            tabIndex={-1}
+            style={{ pointerEvents: 'none', opacity: 0.6 }}
           >
             Inscríbete al evento pulsando aquí
           </a>

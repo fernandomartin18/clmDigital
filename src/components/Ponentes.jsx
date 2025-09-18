@@ -73,6 +73,19 @@ export default function Ponentes() {
           </div>
         ))}
       </div>
+      <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2.5rem', marginBottom: '2.5rem' }}>
+        <a
+          className="inicio-inscribete-btn"
+          href="https://forms.gle/your-form-link"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-disabled="true"
+          tabIndex={-1}
+          style={{ pointerEvents: 'none', opacity: 0.6 }}
+        >
+          Inscríbete al evento pulsando aquí
+        </a>
+      </div>
     </div>
   )
 }

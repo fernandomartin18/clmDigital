@@ -99,7 +99,7 @@
 
 @media (max-width: 900px) {
   .ediciones-container {
-    padding: 0 1rem;
+    padding: 0 1.8rem;
   }
   .ediciones-list {
     gap: 1.2rem;

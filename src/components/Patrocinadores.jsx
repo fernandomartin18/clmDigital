@@ -73,11 +73,17 @@ export default function Patrocinadores() {
     ))
   }
 
+  // Definir los grupos de patrocinadores
+  const mainPatrocinadores = patrocinadores.slice(0, patrocinadores.length - 3)
+  const soportaPatrocinadores = patrocinadores.slice(patrocinadores.length - 3, patrocinadores.length - 1)
+  const organizaPatrocinador = patrocinadores[patrocinadores.length - 1]
+
   return (
     <div className="patrocinadores-container">
+      {/* Título Patrocinadores */}
       <h1 className="patrocinadores-title">Patrocinadores</h1>
       <div className="patrocinadores-list">
-        {patrocinadores.slice(0, patrocinadores.length - 1).map((patro, idx) => {
+        {mainPatrocinadores.map((patro, idx) => {
           const isSpecial = idx === 0
           return (
             <div
@@ -102,8 +108,35 @@ export default function Patrocinadores() {
           )
         })}
       </div>
+
+      {/* Título Soporta y dos cards */}
+      <h2 className="patrocinadores-title" style={{ marginTop: '2.5rem', marginBottom: '2.5rem' }}>Soporta</h2>
+      <div className="patrocinadores-list">
+        {soportaPatrocinadores.map((patro, idx) => (
+          <div
+            className="patrocinador-card"
+            key={patro.nombre}
+            style={{
+              background: isDark ? '#12142c' : 'rgba(184, 187, 216, 0.55)',
+              color: isDark ? 'var(--text, #f6f8fa)' : 'var(--text, #222)',
+              border: isDark ? '1px solid rgba(80,80,80,0.18)' : '1px solid rgba(200,200,200,0.13)',
+            }}
+          >
+            <div className="patro-logo-wrap">
+              <img src={patro.logo} alt={patro.nombre} className="patro-logo-img" />
+            </div>
+            <div className="patro-info">
+              <div className="patro-nombre">{patro.nombre}</div>
+              <div className="patro-descripcion">
+                {renderDescripcion(patro.descripcion)}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
       {/* Título Organiza centrado y card especial debajo */}
-      <h2 className="patrocinadores-title" style={{ marginTop: '2.5rem', marginBottom: '2.5rem',}}>Organiza</h2>
+      <h2 className="patrocinadores-title" style={{ marginTop: '2.5rem', marginBottom: '2.5rem' }}>Organiza</h2>
       <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
         <div
           className="patrocinador-card patrocinador-card--special"
@@ -114,12 +147,12 @@ export default function Patrocinadores() {
           }}
         >
           <div className="patro-logo-wrap patro-logo-wrap--special">
-            <img src={patrocinadores[patrocinadores.length - 1].logo} alt={patrocinadores[patrocinadores.length - 1].nombre} className="patro-logo-img patro-logo-img--special" />
+            <img src={organizaPatrocinador.logo} alt={organizaPatrocinador.nombre} className="patro-logo-img patro-logo-img--special" />
           </div>
           <div className="patro-info">
-            <div className="patro-nombre patro-nombre--special">{patrocinadores[patrocinadores.length - 1].nombre}</div>
+            <div className="patro-nombre patro-nombre--special">{organizaPatrocinador.nombre}</div>
             <div className="patro-descripcion patro-descripcion--special">
-              {renderDescripcion(patrocinadores[patrocinadores.length - 1].descripcion)}
+              {renderDescripcion(organizaPatrocinador.descripcion)}
             </div>
           </div>
         </div>

@@ -3,19 +3,9 @@ import { useEffect, useState } from 'react'
 
 const patrocinadores = [
   {
-    logo: '/eboratic.JPG',
-    nombre: 'Eboratic',
-    descripcion: `Fundada en 2020 en la UCLM (Campus de Talavera), Eboratic es una Junior Empresa formada por estudiantes de Ingeniería Informática y ADE. Con más de 60 socios, es pionera en abarcar varios ámbitos de conocimiento y ofrece servicios de consultoría y asesoramiento web.`
-  },
-  {
-    logo: '/uclm.webp',
-    nombre: 'Universidad de Castilla-La Mancha',
-    descripcion: `La UCLM es una institución pública de educación superior e investigación que impulsa la formación de calidad, la innovación y el desarrollo en Castilla-La Mancha, con una firme vocación de servicio a la sociedad y proyección internacional.`
-  },
-  {
-    logo: '/fcsti.jpeg',
-    nombre: 'Facultad de Ciencias Sociales y Tecnologías de la Información',
-    descripcion: `Centro de la UCLM comprometido con la formación universitaria de excelencia en el ámbito de las ciencias sociales y las tecnologías de la información, impulsando la innovación, la investigación y el desarrollo del talento en la región.`
+    logo: '/JCCM.png',
+    nombre: 'Junta de Comunidades de Castilla-La Mancha (JCCM)',
+    descripcion: `El gobierno autonómico de Castilla-La Mancha, encargado de diseñar y ejecutar políticas públicas en la región. A través de su Agencia de Transformación Digital, impulsa proyectos que acercan la tecnología y la innovación a la ciudadanía y a las empresas.`
   },
   {
     logo: '/orange.png',
@@ -38,10 +28,20 @@ const patrocinadores = [
     descripcion: `Entidad que agrupa, representa y defiende a los profesionales de la ingeniería informática en la región. Promueve la calidad, la ética y la visibilidad de la profesión, además de impulsar la formación continua y la innovación tecnológica.`
   },
   {
-    logo: '/JCCM.png',
-    nombre: 'Junta de Comunidades de Castilla-La Mancha (JCCM)',
-    descripcion: `El gobierno autonómico de Castilla-La Mancha, encargado de diseñar y ejecutar políticas públicas en la región. A través de su Agencia de Transformación Digital, impulsa proyectos que acercan la tecnología y la innovación a la ciudadanía y a las empresas.`
-  }
+    logo: '/uclm.webp',
+    nombre: 'Universidad de Castilla-La Mancha',
+    descripcion: `La UCLM es una institución pública de educación superior e investigación que impulsa la formación de calidad, la innovación y el desarrollo en Castilla-La Mancha, con una firme vocación de servicio a la sociedad y proyección internacional.`
+  },
+  {
+    logo: '/fcsti.jpeg',
+    nombre: 'Facultad de Ciencias Sociales y Tecnologías de la Información',
+    descripcion: `Centro de la UCLM comprometido con la formación universitaria de excelencia en el ámbito de las ciencias sociales y las tecnologías de la información, impulsando la innovación, la investigación y el desarrollo del talento en la región.`
+  },
+  {
+    logo: '/eboratic.JPG',
+    nombre: 'Eboratic',
+    descripcion: `Fundada en 2020 en la UCLM (Campus de Talavera), Eboratic es una Junior Empresa formada por estudiantes de Ingeniería Informática y ADE. Con más de 60 socios, es pionera en abarcar varios ámbitos de conocimiento y ofrece servicios de consultoría y asesoramiento web.`
+  },
 ]
 
 export default function Patrocinadores() {
@@ -77,27 +77,52 @@ export default function Patrocinadores() {
     <div className="patrocinadores-container">
       <h1 className="patrocinadores-title">Patrocinadores</h1>
       <div className="patrocinadores-list">
-        {patrocinadores.map((patro, idx) => (
-          <div
-            className="patrocinador-card"
-            key={idx}
-            style={{
-              background: isDark ? '#12142c' : 'rgba(184, 187, 216, 0.55)',
-              color: isDark ? 'var(--text, #f6f8fa)' : 'var(--text, #222)',
-              border: isDark ? '1px solid rgba(80,80,80,0.18)' : '1px solid rgba(200,200,200,0.13)'
-            }}
-          >
-            <div className="patro-logo-wrap">
-              <img src={patro.logo} alt={patro.nombre} className="patro-logo-img" />
-            </div>
-            <div className="patro-info">
-              <div className="patro-nombre">{patro.nombre}</div>
-              <div className="patro-descripcion">
-                {renderDescripcion(patro.descripcion)}
+        {patrocinadores.slice(0, patrocinadores.length - 1).map((patro, idx) => {
+          const isSpecial = idx === 0
+          return (
+            <div
+              className={`patrocinador-card${isSpecial ? ' patrocinador-card--special' : ''}`}
+              key={idx}
+              style={{
+                background: isDark ? '#12142c' : 'rgba(184, 187, 216, 0.55)',
+                color: isDark ? 'var(--text, #f6f8fa)' : 'var(--text, #222)',
+                border: isDark ? '1px solid rgba(80,80,80,0.18)' : '1px solid rgba(200,200,200,0.13)',
+              }}
+            >
+              <div className={`patro-logo-wrap${isSpecial ? ' patro-logo-wrap--special' : ''}`}>
+                <img src={patro.logo} alt={patro.nombre} className={`patro-logo-img${isSpecial ? ' patro-logo-img--special' : ''}`} />
+              </div>
+              <div className="patro-info">
+                <div className={`patro-nombre${isSpecial ? ' patro-nombre--special' : ''}`}>{patro.nombre}</div>
+                <div className={`patro-descripcion${isSpecial ? ' patro-descripcion--special' : ''}`}>
+                  {renderDescripcion(patro.descripcion)}
+                </div>
               </div>
             </div>
+          )
+        })}
+      </div>
+      {/* Título Organiza centrado y card especial debajo */}
+      <h2 className="patrocinadores-title" style={{ marginTop: '2.5rem', marginBottom: '2.5rem',}}>Organiza</h2>
+      <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+        <div
+          className="patrocinador-card patrocinador-card--special"
+          style={{
+            background: isDark ? '#12142c' : 'rgba(184, 187, 216, 0.55)',
+            color: isDark ? 'var(--text, #f6f8fa)' : 'var(--text, #222)',
+            border: isDark ? '1px solid rgba(80,80,80,0.18)' : '1px solid rgba(200,200,200,0.13)',
+          }}
+        >
+          <div className="patro-logo-wrap patro-logo-wrap--special">
+            <img src={patrocinadores[patrocinadores.length - 1].logo} alt={patrocinadores[patrocinadores.length - 1].nombre} className="patro-logo-img patro-logo-img--special" />
           </div>
-        ))}
+          <div className="patro-info">
+            <div className="patro-nombre patro-nombre--special">{patrocinadores[patrocinadores.length - 1].nombre}</div>
+            <div className="patro-descripcion patro-descripcion--special">
+              {renderDescripcion(patrocinadores[patrocinadores.length - 1].descripcion)}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )

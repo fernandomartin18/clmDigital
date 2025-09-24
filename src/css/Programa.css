@@ -86,6 +86,7 @@
   .programa-location {
     padding: 0.7rem 0.7rem; /* más padding vertical y horizontal en móvil */
     max-width: 98vw;
+    margin-top: 3rem;
   }
   .location-text {
     font-size: 0.97rem;

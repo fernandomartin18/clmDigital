@@ -98,7 +98,7 @@ const actividades = [
 		),
 	},
 	{
-		hora: ' 13:00 - 14:00',
+		hora: ' 13:00 - 13:45',
 		titulo: 'Mesa Redonda – Celonis & Madrija',
 		descripcion: (
 			<>
@@ -116,7 +116,7 @@ const actividades = [
 		),
 	},
 	{
-		hora: ' 14:00 - 14:30',
+		hora: ' 13:45 - 14:00',
 		titulo: 'Clausura',
 		descripcion: (
 			<>
@@ -132,7 +132,7 @@ const actividades = [
 		),
 	},
 	{
-		hora: ' 14:30 - 16:00',
+		hora: ' 14:00 - 15:30',
 		titulo: 'Comida - Vino Español',
 		descripcion: (
 			<>

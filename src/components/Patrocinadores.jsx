@@ -10,7 +10,7 @@ const patrocinadores = [
   {
     logo: '/orange.png',
     nombre: 'Orange España',
-    descripcion: `Ahora integrada en el grupo MásOrange, la compañía es uno de los líderes en telecomunicaciones en España. Con más de 30 millones de líneas móviles, destaca en telefonía, internet y televisión, y ha ampliado su actividad a sectores como la energía verde, seguros y salud digital, reforzando su papel como socio tecnológico clave.`
+    descripcion: `Integrada en el grupo MásOrange, la compañía es líder en telecomunicaciones en España, con más de 30 millones de líneas móviles. Ofrece telefonía, internet y televisión, y se ha diversificado hacia energía verde, seguros y salud digital, consolidándose como socio tecnológico clave.`
   },
   {
     logo: '/telefonica.png',
@@ -26,6 +26,16 @@ const patrocinadores = [
     logo: '/coleing.png',
     nombre: 'Colegio Oficial de Ingenieros en Informática de Castilla-La Mancha (COIICLM)',
     descripcion: `Entidad que agrupa, representa y defiende a los profesionales de la ingeniería informática en la región. Promueve la calidad, la ética y la visibilidad de la profesión, además de impulsar la formación continua y la innovación tecnológica.`
+  },
+  {
+    logo: '/bto.png',
+    nombre: 'BTO Digital',
+    descripcion: `Agencia de marketing fundada en 2012, con presencia en España, Colombia y Panamá. Se especializa en transformación digital, aplicando inbound marketing, CRM, automatización e inteligencia artificial para optimizar ventas, campañas y experiencias de usuario con un enfoque en resultados medibles y transparencia.`
+  },
+  {
+    logo: '/tecon.jpg',
+    nombre: 'Grupo Tecon',
+    descripcion: `Empresa tecnológica con más de 40 años de experiencia y presencia en Castilla-La Mancha, Comunidad Valenciana y Murcia. Ofrece soluciones de transformación digital en infraestructuras IT, desarrollo web, ciberseguridad, consultoría, marketing digital y formación, con un enfoque innovador, cercano y 360º para impulsar el crecimiento empresarial.`
   },
   {
     logo: '/uclm.webp',

@@ -38,6 +38,11 @@ const patrocinadores = [
     descripcion: `Empresa tecnológica con más de 40 años de experiencia y presencia en Castilla-La Mancha, Comunidad Valenciana y Murcia. Ofrece soluciones de transformación digital en infraestructuras IT, desarrollo web, ciberseguridad, consultoría, marketing digital y formación, con un enfoque innovador, cercano y 360º para impulsar el crecimiento empresarial.`
   },
   {
+    logo: '/madrija.png',
+    nombre: 'Madrija',
+    descripcion: `Consultora tecnológica fundada en 2015 en Toledo, con sedes en España, Suiza y Francia. Especializada en salud, educación y turismo, destaca por su enfoque innovador y su plataforma Enigma CIS, usada en más de 80 hospitales europeos para mejorar la gestión cardiológica. También lidera proyectos como SENDA CLM en turismo inteligente y NeuronIA en salud digital, consolidándose como referente internacional con raíces manchegas.`
+  },
+  {
     logo: '/uclm.webp',
     nombre: 'Universidad de Castilla-La Mancha',
     descripcion: `La UCLM es una institución pública de educación superior e investigación que impulsa la formación de calidad, la innovación y el desarrollo en Castilla-La Mancha, con una firme vocación de servicio a la sociedad y proyección internacional.`

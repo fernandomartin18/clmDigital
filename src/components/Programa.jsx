@@ -99,19 +99,10 @@ const actividades = [
 	},
 	{
 		hora: ' 13:00 - 13:45',
-		titulo: 'Mesa Redonda – Celonis & Madrija',
+		titulo: 'Mesa Redonda – Celonis, Madrija & Telefónica',
 		descripcion: (
 			<>
-				Dos visiones, un mismo reto: entender cómo la inteligencia artificial y el
-				análisis de datos están transformando la manera en que trabajamos y tomamos
-				decisiones. <span className="marca-clm">Celonis</span>, líder mundial en
-				process mining, mostrará cómo descubrir y optimizar procesos ocultos en las
-				organizaciones gracias a la IA. <span className="marca-clm">Madrija</span>,
-				con su experiencia en soluciones digitales y de negocio, aportará la
-				perspectiva cercana de cómo estas tecnologías aterrizan en las empresas de
-				nuestro entorno. Una conversación abierta que pondrá frente a frente la
-				escala global y la realidad local, para demostrar que la inteligencia
-				artificial no es un concepto lejano, sino una herramienta ya imprescindible.
+				Tres visiones, un mismo reto: entender cómo la inteligencia artificial y el análisis de datos están transformando la manera en que trabajamos y tomamos decisiones. <span className="marca-clm">Celonis</span>, líder mundial en process mining, mostrará cómo descubrir y optimizar procesos ocultos en las organizaciones gracias a la IA. <span className="marca-clm">Madrija</span>, con su experiencia en soluciones digitales y de negocio, aportará la perspectiva cercana de cómo estas tecnologías aterrizan en las empresas de nuestro entorno. <span className="marca-clm">Telefónica</span>, referente en innovación tecnológica y transformación digital, compartirá su visión sobre cómo escalar estas soluciones en grandes organizaciones y generar impacto real. Una conversación abierta que pondrá frente a frente la escala global, la realidad local y la experiencia corporativa, para demostrar que la inteligencia artificial no es un concepto lejano, sino una herramienta ya imprescindible.
 			</>
 		),
 	},

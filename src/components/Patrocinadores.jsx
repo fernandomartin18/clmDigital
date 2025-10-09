@@ -23,14 +23,19 @@ const patrocinadores = [
     descripcion: `Iniciativa conjunta entre Telefónica y la Universidad de Castilla-La Mancha que fomenta la investigación, la innovación y la formación en competencias digitales. Su objetivo es acercar a los estudiantes y a la comunidad universitaria a los retos de la sociedad digital.`
   },
   {
+    logo: '/bto.png',
+    nombre: 'BTO Digital',
+    descripcion: `Agencia de marketing fundada en 2012, con presencia en España, Colombia y Panamá. Se especializa en transformación digital, aplicando inbound marketing, CRM, automatización e inteligencia artificial para optimizar ventas, campañas y experiencias de usuario con un enfoque en resultados medibles y transparencia.`
+  },
+  {
     logo: '/coleing.png',
     nombre: 'Colegio Oficial de Ingenieros en Informática de Castilla-La Mancha (COIICLM)',
     descripcion: `Entidad que agrupa, representa y defiende a los profesionales de la ingeniería informática en la región. Promueve la calidad, la ética y la visibilidad de la profesión, además de impulsar la formación continua y la innovación tecnológica.`
   },
   {
-    logo: '/bto.png',
-    nombre: 'BTO Digital',
-    descripcion: `Agencia de marketing fundada en 2012, con presencia en España, Colombia y Panamá. Se especializa en transformación digital, aplicando inbound marketing, CRM, automatización e inteligencia artificial para optimizar ventas, campañas y experiencias de usuario con un enfoque en resultados medibles y transparencia.`
+    logo: '/minsait.jpg',
+    nombre: 'Minsait',
+    descripcion: `Compañía de Indra referente en transformación digital y consultoría tecnológica. Con soluciones innovadoras en inteligencia artificial, ciberseguridad y servicios digitales, impulsa el progreso de empresas e instituciones. Agradecemos su apoyo como patrocinador, contribuyendo al desarrollo de iniciativas que conectan tecnología y sociedad.`
   },
   {
     logo: '/tecon.jpg',

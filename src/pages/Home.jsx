@@ -1,6 +1,11 @@
 import { useRef, useState, useEffect } from 'react'
 import themes from '../styles/themes'
 import Navbar from '../components/Navbar'
+import Inicio from '../components/Inicio'
+import Programa from '../components/Programa'
+import Ponentes from '../components/Ponentes'
+import EdicionesAnteriores from '../components/EdicionesAnteriores'
+import Patrocinadores from '../components/Patrocinadores'
 
 export default function Home({ theme, toggleTheme }) {
   const [activeSection, setActiveSection] = useState('inicio')
@@ -8,13 +13,19 @@ export default function Home({ theme, toggleTheme }) {
     inicio: useRef(null),
     programa: useRef(null),
     ponentes: useRef(null),
-    inscripcion: useRef(null),
     ediciones: useRef(null),
     patrocinadores: useRef(null),
   }
 
   const scrollToSection = (key) => {
-    sections[key].current.scrollIntoView({ behavior: 'smooth' })
+    const offset = 80 // altura aproximada de la navbar en px
+    const element = sections[key].current
+    if (element) {
+      const rect = element.getBoundingClientRect()
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+      const top = rect.top + scrollTop - offset
+      window.scrollTo({ top, behavior: 'smooth' })
+    }
   }
 
   // Visibilidad animada de cada sección
@@ -49,22 +60,18 @@ export default function Home({ theme, toggleTheme }) {
   useEffect(() => {
     const handleScroll = () => {
       const sectionKeys = Object.keys(sections)
+      const offset = 80 // mismo offset que en scrollToSection
       let current = sectionKeys[0]
+      let closest = -Infinity
       for (let key of sectionKeys) {
         const ref = sections[key].current
         if (ref) {
           const rect = ref.getBoundingClientRect()
-          if (rect.top <= 80 && rect.bottom > 80) {
+          if (rect.top <= offset && rect.top > closest) {
+            closest = rect.top
             current = key
-            break
           }
         }
-      }
-      // Cerca del final de la página, navbar activa contacto
-      const scrollPosition = window.innerHeight + window.scrollY
-      const threshold = 50 // píxeles desde el fondo
-      if (document.body.offsetHeight - scrollPosition < threshold) {
-        current = 'contacto'
       }
       setActiveSection(current)
     }
@@ -82,12 +89,10 @@ export default function Home({ theme, toggleTheme }) {
     document.body.style.transition = 'background 0.5s, color 0.5s'
     document.body.style.overscrollBehaviorY = 'contain'
     document.body.style.overflowY = 'auto'
-    document.body.style.backgroundColor = themes[theme].background // Fondo sólido para evitar blanco
-    // Elimina height: 100vh
+    document.body.style.backgroundColor = themes[theme].background
     document.documentElement.style.overscrollBehaviorY = 'contain'
     document.documentElement.style.overflowY = 'auto'
     document.documentElement.style.transition = 'background 0.5s, color 0.5s'
-    // Elimina height: 100vh
     document.documentElement.style.setProperty('--navbar-bg', themes[theme].navbar + 'cc')
     document.documentElement.style.setProperty('--navbar-text', themes[theme].navbarText)
     document.documentElement.style.setProperty('--navbar-shadow', themes[theme].navbarShadow)
@@ -105,23 +110,20 @@ export default function Home({ theme, toggleTheme }) {
         activeSection={activeSection}
       />
       <main>
-        <section ref={sections.inicio} style={{ minHeight: '100vh', padding: '4rem 0' }}>
-          <h1>Inicio</h1>
+        <section ref={sections.inicio} style={{ padding: 0 }}>
+          <Inicio />
         </section>
-        <section ref={sections.programa} style={{ minHeight: '100vh', padding: '4rem 0' }}>
-          <h1>Programa</h1>
+        <section ref={sections.programa} style={{ padding: 0 }}>
+          <Programa />
         </section>
-        <section ref={sections.ponentes} style={{ minHeight: '100vh', padding: '4rem 0' }}>
-          <h1>Ponentes</h1>
+        <section ref={sections.ponentes} style={{ padding: 0 }}>
+          <Ponentes />
         </section>
-        <section ref={sections.inscripcion} style={{ minHeight: '100vh', padding: '4rem 0' }}>
-          <h1>Inscripción</h1>
+        <section ref={sections.ediciones} style={{ padding: 0 }}>
+          <EdicionesAnteriores />
         </section>
-        <section ref={sections.ediciones} style={{ minHeight: '100vh', padding: '4rem 0' }}>
-          <h1>Ediciones anteriores</h1>
-        </section>
-        <section ref={sections.patrocinadores} style={{ minHeight: '100vh', padding: '4rem 0' }}>
-          <h1>Patrocinadores</h1>
+        <section ref={sections.patrocinadores} style={{ padding: 0 }}>
+          <Patrocinadores />
         </section>
       </main>
     </>

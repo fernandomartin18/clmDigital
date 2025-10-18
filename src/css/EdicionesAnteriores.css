@@ -1,0 +1,143 @@
+.ediciones-container {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.ediciones-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 4rem;
+  margin-top: 3rem;
+  color: var(--primary, #e79608);
+}
+
+.ediciones-list {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.edicion-card {
+  display: flex;
+  flex-direction: column;
+  background: rgba(184, 187, 216, 0.55);
+  border-radius: 1.1rem;
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.08);
+  overflow: hidden;
+  max-width: 280px;
+  min-width: 210px;
+  flex: 1 1 230px;
+  align-items: stretch;
+  text-decoration: none;
+  transition: box-shadow 0.2s, background 0.2s;
+  border: 1px solid rgba(200,200,200,0.13);
+  color: var(--text, #222);
+}
+
+.edicion-card:hover, .edicion-card:focus {
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.13);
+  background: rgba(184, 187, 216, 0.75);
+}
+
+@media (prefers-color-scheme: dark) {
+  .edicion-card {
+    background: #12142c;
+    color: var(--text, #f6f8fa);
+    border: 1px solid rgba(80,80,80,0.18);
+  }
+  .edicion-card:hover, .edicion-card:focus {
+    background: #181a36;
+  }
+}
+
+.edicion-img-wrap {
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edicion-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.edicion-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1.1rem 1.1rem 1.2rem 1.1rem;
+  gap: 0.7rem;
+}
+
+.edicion-titulo {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  color: var(--primary, #e79608);
+}
+
+.edicion-descripcion {
+  font-size: 1.01rem;
+  color: var(--text, #222);
+  opacity: 0.93;
+  line-height: 1.5;
+}
+
+@media (prefers-color-scheme: dark) {
+  .edicion-descripcion {
+    color: var(--text, #f6f8fa);
+  }
+}
+
+@media (max-width: 900px) {
+  .ediciones-container {
+    padding: 0 1.8rem;
+  }
+  .ediciones-list {
+    gap: 1.2rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .ediciones-list {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  .edicion-card {
+    max-width: 98vw;
+    width: 95%;
+    min-width: 0;
+    padding: 0;
+    min-height: 300px;
+    height: auto;
+    max-height: 300px;
+  }
+  .ediciones-title {
+    font-size: 2rem;
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+  }
+  .edicion-info {
+    padding: 1rem 0.8rem 1.1rem 0.8rem;
+  }
+  .edicion-titulo {
+    font-size: 1.05rem;
+  }
+  .edicion-descripcion {
+    font-size: 0.98rem;
+  }
+  .edicion-img-wrap {
+    min-height: 160px;
+    height: auto;
+    max-height: 160px;
+  }
+}
